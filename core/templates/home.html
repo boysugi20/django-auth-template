@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+        h3 {text-align: center;}
+        p {text-align: center;}
+        </style>
+    </head>
+    <body>        
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+        <nav>
+            <div class="nav-wrapper"style="background-color: teal">
+              <a href="#" class="brand-logo">Django-Allauth</a>
+            </div>
+          </nav>
+        <h3>Welcome</h3>
+          <div class="container text-dark mt-5">
+            <div class="row justify-content-md-center">
+              <div class="col md-5 p-3">
+                {% if user.is_authenticated%}
+                <p>{{user.email}}</p>
+                <a href="{% url 'account_logout' %}">Logout</a>
+                {%else%}
+                <p>Please <a href="{% url 'account_login' %}">Login</a></p>
+                {%endif%}
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
