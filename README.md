@@ -37,14 +37,14 @@ Ensure the following prerequisites are met before running the project:
 Follow these steps to change the project name:
 
 1. Rename the Project Directory:<br />
-`mv myProject newProjectName`
+`mv myProject newProjectName`:<br />
 2. Update `manage.py` and `myProject/wsgi.py`:<br />
-change:
-`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myProject.settings')`
-into:
-`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newProjectName.settings')`
+change::<br />
+`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myProject.settings')`:<br />
+into::<br />
+`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newProjectName.settings')`:<br />
 3. Update `myProject/settings.py`:<br />
-change:
-`ROOT_URLCONF = 'myProject.urls'` and `WSGI_APPLICATION = 'myProject.wsgi.application`
-into:
-`ROOT_URLCONF = 'newProjectName.urls'` and `WSGI_APPLICATION = 'newProjectName.wsgi.application`
+change::<br />
+`ROOT_URLCONF = 'myProject.urls'` and `WSGI_APPLICATION = 'myProject.wsgi.application`:<br />
+into::<br />
+`ROOT_URLCONF = 'newProjectName.urls'` and `WSGI_APPLICATION = 'newProjectName.wsgi.application`:<br />
