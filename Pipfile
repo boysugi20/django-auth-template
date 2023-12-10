@@ -5,11 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-pymysql = "*"
-dotenv = "*"
-python-dotenv = "*"
 django-allauth = "*"
 django-extensions = "*"
+environs = "*"
+django-tailwind = "*"
 
 [dev-packages]
 

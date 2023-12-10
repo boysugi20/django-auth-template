@@ -7,35 +7,44 @@ The Django Allauth Custom User Template is a starting template for Django projec
 ## Table of Contents
 
 - [Setup](#setup)
-- [Configuration](#configuration)
+- [Requirements](#requirements)
+- [Configurations](#configurations)
 
 ## Setup
 
 Follow these steps to set up the project locally:
 
-1. Create a `.env` file in the root directory with the following content:<br /><br />
-DB_NAME=<br />
-DB_USERNAME=<br />
-DB_PASS=<br />
-DB_HOST=<br />
-DB_PORT=<br /><br />
-Fill in the values for your database configuration.
-
-2. Install project dependencies using Pipenv:<br />
+1. Install project dependencies using Pipenv:<br />
 `pipenv install`
-3. Reset the database:<br />
+2. Reset the database:<br />
 `python manage.py reset_db`
-4. Apply database migrations:<br />
+3. Apply database migrations:<br />
 `python manage.py migrate`
-5. Start the development server:<br />
+4. Start the development server:<br />
 `python manage.py runserver`
+4. Start the tailwind server:<br />
+`python manage.py tailwind start`
 
-## Configuration
+## Requirements
 
-Make sure to update the `.env` file with your actual database configuration. Fill in the values for the following variables:
+Ensure the following prerequisites are met before running the project:
 
-- `DB_NAME`: The name of the database.
-- `DB_USERNAME`: The username for database access.
-- `DB_PASS`: The password for database access.
-- `DB_HOST`: The host or IP address of the database server.
-- `DB_PORT`: The port number for database access.
+- **Node.js and npm:**: Install npm to manage and compile Tailwind CSS styles.
+- **Windows Users**: Uncomment the "NPM_BIN_PATH" in the settings.py file.
+
+## Configurations
+
+Follow these steps to change the project name:
+
+1. Rename the Project Directory:<br />
+`mv myProject newProjectName`
+2. Update `manage.py` and `myProject/wsgi.py`:<br />
+change:
+`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myProject.settings')`
+into:
+`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newProjectName.settings')`
+3. Update `myProject/settings.py`:<br />
+change:
+`ROOT_URLCONF = 'myProject.urls'` and `WSGI_APPLICATION = 'myProject.wsgi.application`
+into:
+`ROOT_URLCONF = 'newProjectName.urls'` and `WSGI_APPLICATION = 'newProjectName.wsgi.application`
